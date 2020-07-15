@@ -39,10 +39,10 @@ fi
 
 if [[ $password =~ $pass_Pattern ]]
 then
-        echo $password | grep "[A-Z]"
+        echo $password | grep "[A-Z]" | grep "[0-9]"
         if [[ $? -ne 0 ]]
         then
-                echo "Password must contain one uppercase"
+                echo "Password must contain one uppercase & one number"
         else
 		echo "Valid Password"
 	fi
