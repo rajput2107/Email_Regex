@@ -39,7 +39,14 @@ fi
 
 if [[ $password =~ $pass_Pattern ]]
 then
-        echo "Valid Password"
+        echo $password | grep "[A-Z]"
+        if [[ $? -ne 0 ]]
+        then
+                echo "Password must contain one uppercase"
+        else
+		echo "Valid Password"
+	fi
+
 else
         echo "Invalid Password. Min length should be 8"
 fi
