@@ -2,9 +2,12 @@
 export LC_COLLATE=C
 
 read -p "Enter First name: " Fname
+read -p "Enter Last name: " Lname
 
 Fname_Pattern="^[A-Z][a-z]{2,}$"
-if [[ $Fname =~ $Fname_Pattern ]]
+Lname_Pattern="^[A-Z][a-z]{2,}$"
+
+if [[ $Fname =~ $Fname_Pattern ]] && [[ $Lname =~ $Lname_Pattern ]]
 then
 	echo "Valid Name"
 else
